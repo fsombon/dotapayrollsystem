@@ -8,21 +8,11 @@ Delete
 Search 
 
 Employees from the System
-
-Add
-Update
-Delete 
-
 Salary details
-
-Add
-Update
-Delete 
-
 Leave details 
 
 Generate and Print Pay Slips
 
-Database file is also included
-
 GUI is done using Java Swing Framework
+
+![alt text](https://i.nuuls.com/3KCqM.png)
