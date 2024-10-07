@@ -1,0 +1,136 @@
+-- phpMyAdmin SQL Dump
+-- version 5.1.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Server version: 10.4.21-MariaDB
+-- PHP Version: 8.0.11
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `payroll`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `defultdeduc`
+--
+
+CREATE TABLE `defultdeduc` (
+  `id` int(11) NOT NULL,
+  `defaultsss` decimal(10,2) NOT NULL,
+  `defaultphilhealth` decimal(10,2) NOT NULL,
+  `defaulthdmf` decimal(10,2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `defultdeduc`
+--
+
+INSERT INTO `defultdeduc` (`id`, `defaultsss`, `defaultphilhealth`, `defaulthdmf`) VALUES
+(1, '607.50', '335.50', '200.00');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `employee`
+--
+
+CREATE TABLE `employee` (
+  `empId` int(11) NOT NULL DEFAULT 0,
+  `fname` varchar(30) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `gender` varchar(6) NOT NULL,
+  `designation` varchar(50) NOT NULL,
+  `department` varchar(50) NOT NULL,
+  `vacation_leave` double DEFAULT NULL,
+  `sick_leave` double DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `salary_details`
+--
+
+CREATE TABLE `salary_details` (
+  `empId` int(11) NOT NULL,
+  `totalDays` double NOT NULL,
+  `SalRateDaily` double NOT NULL,
+  `basicSalary` double NOT NULL,
+  `Allowance` double NOT NULL,
+  `nightDiffhours` double NOT NULL,
+  `nightDiffamount` double NOT NULL,
+  `specialHolidaydays` double NOT NULL,
+  `specialHolidayamount` double NOT NULL,
+  `SHNDhours` double NOT NULL,
+  `SHNDamount` double NOT NULL,
+  `legalHolidaydays` double NOT NULL,
+  `legalHolidayamount` double NOT NULL,
+  `LHNDhours` double NOT NULL,
+  `LHNDamount` double NOT NULL,
+  `Overtimehours` double NOT NULL,
+  `Overtimeamount` double NOT NULL,
+  `OTnightdiffhours` double NOT NULL,
+  `OTnightdiffamount` double NOT NULL,
+  `LeaveOthers` double NOT NULL,
+  `Adjustment` double NOT NULL,
+  `lateundertimemins` double NOT NULL,
+  `lateundertimerate` double NOT NULL,
+  `lateundertimeamount` double NOT NULL,
+  `SSSamount` double NOT NULL,
+  `PhilHealthamount` double NOT NULL,
+  `HDMFamount` double NOT NULL,
+  `OtherDeduction` double NOT NULL,
+  `fromcutoffdate` date DEFAULT NULL,
+  `tocutoffdate` date DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `total_deductions` decimal(10,2) NOT NULL,
+  `net_pay` decimal(10,2) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+
+--
+-- Table structure for table `user`
+--
+
+CREATE TABLE `user` (
+  `userId` int(11) NOT NULL,
+  `userName` varchar(20) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `admin` tinyint(1) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `user`
+--
+
+INSERT INTO `user` (`userId`, `userName`, `password`, `admin`) VALUES
+(1, 'admin', 'admin', 1);
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `employee`
+--
+ALTER TABLE `employee`
+  ADD PRIMARY KEY (`empId`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
