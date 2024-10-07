@@ -16,4 +16,5 @@ Generate and Print Pay Slips
 GUI is done using Java Swing Framework
 
 ![alt text](https://i.nuuls.com/3KCqM.png)
-![alt text](https://github.com/fsombon/dotapayrollsystem/blob/master/screenshots/mainmenu.png?raw=true)
+<!---use image below if above expires--->
+<!---![alt text](https://github.com/fsombon/dotapayrollsystem/blob/master/screenshots/mainmenu.png?raw=true)--->
